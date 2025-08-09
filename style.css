@@ -1,0 +1,706 @@
+# Responsive for mobile
+@media (max-width: 600px) {
+  #main-content {
+    width: 98vw;
+    max-width: 100vw;
+    min-width: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 2vw;
+  }
+  #welcome-text {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+  }
+  #start-btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 30px;
+  }
+  #countdown-number {
+    font-size: 2.2rem;
+  }
+  .fruit {
+    width: 44px;
+    height: 44px;
+  }
+  .fruit-half {
+    width: 22px;
+    height: 44px;
+  }
+  .fruit-half img {
+    width: 44px;
+    height: 44px;
+  }
+  #dojo-building {
+    width: 90px;
+    max-width: 90vw;
+  }
+  #final-message h1 {
+    font-size: 1.3rem;
+    padding: 0 2vw;
+  }
+  #final-message p {
+    font-size: 1rem;
+    padding: 0 2vw;
+  }
+  #final-message {
+    padding: 0 2vw;
+  }
+  #sakura-container .sakura {
+    width: 24px;
+    height: 24px;
+  }
+}
+#dojo-building {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 380px;
+  max-width: 90vw;
+  z-index: 43;
+  opacity: 0.92;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 32px #3e1f0d88);
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, #2c3e50 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Cahaya misterius di tengah */
+#mysterious-light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, rgba(255, 215, 0, 0.1) 50%, transparent 100%);
+  border-radius: 50%;
+  animation: glow 3s ease-in-out infinite alternate;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes glow {
+  0% { 
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% { 
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.5);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+#main-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+#welcome-text {
+  font-size: 3.5rem;
+  color: #FFD700;
+  margin-bottom: 3rem;
+  letter-spacing: 3px;
+  text-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.8),
+    0 0 40px rgba(255, 215, 0, 0.4),
+    0 0 60px rgba(255, 215, 0, 0.2);
+  animation: shimmer 2s ease-in-out infinite alternate, shake 0.5s ease-in-out infinite;
+  font-weight: bold;
+}
+
+@keyframes shimmer {
+  0% { 
+    text-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.8),
+      0 0 40px rgba(255, 215, 0, 0.4),
+      0 0 60px rgba(255, 215, 0, 0.2);
+  }
+  100% { 
+    text-shadow: 
+      0 0 30px rgba(255, 215, 0, 1),
+      0 0 60px rgba(255, 215, 0, 0.6),
+      0 0 90px rgba(255, 215, 0, 0.3);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+#start-btn {
+  font-size: 1.8rem;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border: none;
+  border-radius: 50px;
+  color: #1a1a2e;
+  font-weight: bold;
+  box-shadow: 
+    0 0 30px rgba(255, 215, 0, 0.5),
+    0 8px 32px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 15;
+  pointer-events: auto;
+}
+
+#start-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+#start-btn:hover::before {
+  left: 100%;
+}
+
+#start-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 50px rgba(255, 215, 0, 0.8),
+    0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+#start-btn:active {
+  transform: scale(0.95);
+  box-shadow: 
+    0 0 30px rgba(255, 215, 0, 0.6),
+    0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Countdown Screen */
+#countdown-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #34495e 0%, #2c3e50 100%);
+  z-index: 20;
+}
+
+#countdown-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#countdown-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  color: #FFD700;
+  text-shadow: 
+    0 0 30px rgba(255, 215, 0, 0.8),
+    0 0 60px rgba(255, 215, 0, 0.4);
+  font-weight: bold;
+  animation: countdownPulse 1s ease-in-out;
+  z-index: 25;
+}
+
+@keyframes countdownPulse {
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+#fruit-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 15;
+}
+
+/* Fruit Styles dengan Gambar */
+.fruit {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  transition: none;
+  transform-origin: center;
+}
+
+.fruit img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Buah Terbelah */
+.fruit-half {
+  position: absolute;
+  width: 60px;
+  height: 120px;
+  overflow: hidden;
+  transition: none;
+  z-index: 17;
+}
+
+.fruit-half.left {
+  left: 0;
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+.fruit-half.right {
+  right: 0;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+.fruit-half img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.fruit-half.left img {
+  transform: translateX(0);
+}
+
+.fruit-half.right img {
+  transform: translateX(-60px);
+}
+
+/* Animasi Gravitasi */
+@keyframes gravityFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(25vh) rotate(90deg);
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg);
+  }
+  75% {
+    transform: translateY(75vh) rotate(270deg);
+  }
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes gravityFallLeft {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(25vh) translateX(-20px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-40px) rotate(90deg);
+  }
+  75% {
+    transform: translateY(75vh) translateX(-60px) rotate(135deg);
+  }
+  100% {
+    transform: translateY(120vh) translateX(-80px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes gravityFallRight {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(25vh) translateX(20px) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(40px) rotate(-90deg);
+  }
+  75% {
+    transform: translateY(75vh) translateX(60px) rotate(-135deg);
+  }
+  100% {
+    transform: translateY(120vh) translateX(80px) rotate(-180deg);
+    opacity: 0;
+  }
+}
+
+/* Slash Effects */
+.slash {
+  position: absolute;
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #FFD700, transparent);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  animation: slashEffect 0.3s ease-out forwards;
+  z-index: 16;
+}
+
+@keyframes slashEffect {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+/* Explosion Screen */
+#explosion-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 30;
+}
+
+#explosion-screen.shake {
+  animation: screenShake 0.5s ease-in-out;
+}
+
+@keyframes screenShake {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5px, -5px); }
+  20% { transform: translate(5px, -5px); }
+  30% { transform: translate(-5px, 5px); }
+  40% { transform: translate(5px, 5px); }
+  50% { transform: translate(-3px, -3px); }
+  60% { transform: translate(3px, -3px); }
+  70% { transform: translate(-3px, 3px); }
+  80% { transform: translate(3px, 3px); }
+  90% { transform: translate(-1px, -1px); }
+}
+
+#explosion-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #fff 0%, #ffd700 30%, #000 100%);
+  animation: explosionFlash 1.5s ease-out;
+}
+
+@keyframes explosionFlash {
+  0% { 
+    opacity: 0; 
+    transform: scale(0); 
+    filter: brightness(1);
+  }
+  20% { 
+    opacity: 1; 
+    transform: scale(0.8); 
+    filter: brightness(2);
+  }
+  40% { 
+    opacity: 0.8; 
+    transform: scale(1.2); 
+    filter: brightness(1.5);
+  }
+  60% { 
+    opacity: 0.5; 
+    transform: scale(1.5); 
+    filter: brightness(1.2);
+  }
+  80% { 
+    opacity: 0.3; 
+    transform: scale(1.8); 
+    filter: brightness(1);
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(2); 
+    filter: brightness(0.8);
+  }
+}
+
+/* Efek ledakan tambahan */
+.explosion-wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 215, 0, 0.6) 50%, transparent 100%);
+  animation: explosionWave 1.5s ease-out forwards;
+}
+
+@keyframes explosionWave {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  50% {
+    width: 300px;
+    height: 300px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 600px;
+    height: 600px;
+    opacity: 0;
+  }
+}
+
+.explosion-shockwave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border: 3px solid rgba(255, 215, 0, 0.8);
+  border-radius: 50%;
+  animation: shockwave 1s ease-out forwards;
+}
+
+@keyframes shockwave {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+    border-width: 3px;
+  }
+  100% {
+    width: 800px;
+    height: 800px;
+    opacity: 0;
+    border-width: 1px;
+  }
+}
+
+#explosion-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: particleExplosion 1.5s ease-out forwards;
+}
+
+.particle.fire {
+  background: radial-gradient(circle, #ffd700, #ffed4e);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+.particle.smoke {
+  background: radial-gradient(circle, rgba(128, 128, 128, 0.8), rgba(64, 64, 64, 0.6));
+  box-shadow: 0 0 8px rgba(128, 128, 128, 0.5);
+}
+
+.particle.spark {
+  background: radial-gradient(circle, #ffd700, #ffed4e);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
+}
+
+@keyframes particleExplosion {
+  0% {
+    transform: translate(0, 0) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(var(--scale, 1)) rotate(var(--rotate, 360deg));
+    opacity: 0;
+  }
+}
+
+/* Efek debu ledakan */
+.explosion-dust {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: dustSettle 2s ease-out forwards;
+}
+
+@keyframes dustSettle {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  40% {
+    opacity: 0.2;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+/* Final Message */
+#final-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #2d1e13 0%, #6b3e26 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+  opacity: 0;
+  animation: finalMessageAppear 3s ease-in forwards;
+  overflow: hidden;
+}
+
+#dojo-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://raw.githubusercontent.com/alfathso/dojoscene/main/dojo-bg.png') center/cover no-repeat;
+  opacity: 0.25;
+  z-index: 41;
+  pointer-events: none;
+}
+
+#sakura-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 42;
+}
+
+.sakura {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  opacity: 0.85;
+  z-index: 42;
+  animation: sakura-fall linear forwards;
+}
+
+@keyframes sakura-fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg) scale(0.8);
+    opacity: 0.2;
+  }
+}
+
+/* Samurai color theme for text */
+#final-message h1 {
+  color: #f8e9a1;
+  text-shadow: 0 0 20px #b83b1d, 0 0 40px #b83b1d;
+  font-family: 'serif', 'Georgia', 'Times New Roman', Times, serif;
+  letter-spacing: 2px;
+}
+
+@keyframes finalMessageAppear {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#final-message h1 {
+  font-size: 4rem;
+  color: #FFD700;
+  text-shadow: 
+    0 0 30px rgba(255, 215, 0, 0.8),
+    0 0 60px rgba(255, 215, 0, 0.4);
+  margin-bottom: 2rem;
+  text-align: center;
+  animation: finalTextGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes finalTextGlow {
+  0% { 
+    text-shadow: 
+      0 0 30px rgba(255, 215, 0, 0.8),
+      0 0 60px rgba(255, 215, 0, 0.4);
+  }
+  100% { 
+    text-shadow: 
+      0 0 50px rgba(255, 215, 0, 1),
+      0 0 100px rgba(255, 215, 0, 0.6);
+  }
+}
+
+#final-message p {
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.6;
+}
